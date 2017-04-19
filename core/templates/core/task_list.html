@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h2>Task list</h2></div>
+  <div class="panel-body">
+    <a href="/tasks/add/" class="btn btn-info btn-sm">
+      <span class="glyphicon glyphicon-plus"></span>New
+    </a>
+    <a href="/tasks/populate/" class="btn btn-info btn-sm">
+      <span class="glyphicon glyphicon-th"></span>Populate
+    </a>
+    <a href="/tasks/delete-all/" class="btn btn-info btn-sm">
+      <span class="glyphicon glyphicon-th"></span>Delete All
+    </a>
+  </div>
+
+  <!-- Table -->
+{% if object_list %}
+  <table class="table table-striped table-bordered table-condensed table-responsive">
+    <tr>
+      <th class="col-md-10">Task</th>
+      <th class="col-md-2">Actions</th>
+    </tr>
+    {% for task in object_list %}
+      <tr name="{{ task.id }}" name="{{ task.title }}">
+        <td><a href="/tasks/{{ task.id }}/" id="{{ task.id }}">{{ task.title }}</a></td>
+        <td>
+          <a href="/tasks/{{ task.id }}/" name="edit-task">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+          <a href="/tasks/{{ task.id }}/delete/" name="delete-task">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+          <a href="/tasks/{{ task.id }}/detail/" name="view-task">
+            <span class="glyphicon glyphicon-eye-open"></span>
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+{% else %}
+    <p>No tasks are available.</p>
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h2>{{ task.id }}</h2></div>
+  <div class="panel-body">
+      <p>Task id: <span name="id">{{ task.id }}</span></p>
+      <p>Title: {{ task.title }}</p>
+      <p>Created at: {{ task.created }}</p>
+      <p>Updated at: {{ task.updated }}</p>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+
+

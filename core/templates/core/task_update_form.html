@@ -1,0 +1,5 @@
+<p>Task id: <span name="id">{{ task.id }}</span></p>
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+</form>
