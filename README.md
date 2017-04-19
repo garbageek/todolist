@@ -19,7 +19,7 @@ sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
 ```shell
 sudo apt-get update
-sudo apt-get install -y python3 python3-pip python3-virtualenv xvfb
+sudo apt-get install -y python3 python3-pip python3-virtualenv xvfb xserver-xephyr
 sudo pip3 install django selenium django-bootstrap3 pyvirtualdisplay
 git clone https://github.com/garbageek/todolist
 cd todolist/
