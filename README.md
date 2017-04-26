@@ -1,10 +1,8 @@
 # Todolist
 
-Тестове завдання - Todolist з функіональними тестами на Selenium.
+Test task - Todolist with functional tests based on Selenium.
 
-Демо - http://46.101.171.188/tasks/
-
-### Встановлення Chromedriver
+### Install Chromedriver
 
 ```shell
 wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
@@ -15,19 +13,19 @@ sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 ```
 
-### Встановлення додатку та необхідних бібліотек
+### Install app and libraries
 
 ```shell
 sudo apt-get update
 sudo apt-get install -y python3 python3-pip python3-virtualenv xvfb xserver-xephyr
-sudo pip3 install django selenium django-bootstrap3 pyvirtualdisplay
+sudo pip3 install django selenium django-bootstrap3 `pyvirtualdisplay
 git clone https://github.com/garbageek/todolist
 cd todolist/
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-### Запуск та тестування
+### Run and Test
 
 ```shell
 python3 manage.py runserver
